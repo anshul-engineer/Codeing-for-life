@@ -1,0 +1,17 @@
+#  to find if a number is binary or not
+# written by anshul thakur in python
+num = int(input("enter the digit"))
+n = num
+flag = 0
+while(num!=0):
+    dig = int(num%10)
+    if(dig == 0 or dig == 1):
+        num = num/10
+        continue
+    else:
+        flag = flag + 1
+        break
+if (flag == 0):
+    print("is binary")
+else:
+    print("check your eyes")
