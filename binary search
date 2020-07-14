@@ -1,0 +1,21 @@
+# to search an element in an array useing binary binarysearch
+# written by anshul thakur in python
+def binarysearch(array,element):
+    l = len(array)
+    start = 0
+    end = l-1
+    while start <= end:
+        mid = start + (end-start)//2 #end-start is done for remaining numbers
+        midv = array[mid]
+        if midv == element:
+            return mid
+        elif element < midv:
+            end = mid-1
+        else:
+            start = mid+1
+    return None
+a = input().split(' ')
+ar =[int(num) for num in a]
+number = int(input('number to be find'))
+ss = binarysearch(ar,number)
+print(ss)
