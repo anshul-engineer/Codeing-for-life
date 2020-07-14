@@ -1,6 +1,7 @@
 # code for anagram
 # e.g add and dad are anagram
 # this code is written by anshul thakur 
+# this code is written in python
 def anagram(a,b):
     if sorted(a) == sorted(b):
         print('dope its an anagram')
