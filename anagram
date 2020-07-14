@@ -1,0 +1,11 @@
+# code for anagram
+# e.g add and dad are anagram
+# this code is written by anshul thakur 
+def anagram(a,b):
+    if sorted(a) == sorted(b):
+        print('dope its an anagram')
+    else:
+        print('nope not a anagram')
+c = input('enter first string')
+d = input('enter second string')
+anagram(c,d)
