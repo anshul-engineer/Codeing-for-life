@@ -1,0 +1,16 @@
+# this code uses bubblesort for sorting an array
+# this code is written by anshul in python
+def bubblesort(str):
+    inrange = len(str) - 1
+    sorted = False
+
+    while not sorted:
+        sorted = True
+        for i in range(0,inrange):
+            if str[i] > str[i+1]:
+                sorted = False
+                str[i],str[i+1] = str[i+1],str[i]
+    return str
+a = input().split(' ')
+arr = [int(num) for num in a]
+print(bubblesort(arr))
