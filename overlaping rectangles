@@ -1,0 +1,24 @@
+#Given two rectangles, find if the given two rectangles overlap or not. A rectangle is denoted by providing the x and y co-ordinates of two points: the left top corner and the right bottom corner of the rectangle. Two rectangles sharing a side are considered overlapping.
+#Note : It may be assumed that the rectangles are parallel to the coordinate axis.
+
+#rectanglesOverlap
+
+#The first integer T denotes the number of testcases. For every test case, there are 2 lines of input. The first line consists of 4 integers: denoting the co-ordinates of the 2 points of the first rectangle. The first integer denotes the x co-ordinate and the second integer denotes the y co-ordinate of the left topmost corner of the first rectangle. The next two integers are the x and y co-ordinates of right bottom corner. Similarly, the second line denotes the cordinates of the two points of the second rectangle in similar fashion.
+
+#For each testcase, output (either 1 or 0) denoting whether the 2 rectangles are overlapping. 1 denotes the rectangles overlap whereas 0 denotes the rectangles do not overlap.
+# codeing in python by anshul thakur
+# taken from geek for geeks
+def overlap(l11,r11,l12,r12,l21,l22,r21,r22):
+    if ((l11>=r21) or (l21>=r11)):
+        return False
+    elif ((l12<=r22)or(l22<=r12)):
+        return False
+    return True
+t = int(input())
+for i in range(1,t+1):
+    n = input().split(' ')
+    lst1 = [int(num) for num in n]
+    m = input().split(' ')
+    lst2 = [int(numm) for numm in m]
+    a = overlap(lst1[0],lst1[1],lst1[2],lst1[3],lst2[0],lst2[1],lst2[2],lst2[3])
+    print(a)
