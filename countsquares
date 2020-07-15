@@ -1,0 +1,34 @@
+#Given a sample space S consisting of all perfect squares starting from 1, 4, 9 and so on. You are given a number N, you have to print the number of integers less than N in the sample space S.
+
+#The first line contains an integer T, denoting the number of test cases.Then T test cases follow. The first line of each test case contains an integer N, denoting the number.
+
+#Print the answer of each test case in a new line.
+# codeing in python by anshul thakur
+# taken from geek for geeks
+# sample space for  all squares
+def closest(list,val):# to find nearest value in list
+    return list[min(range(len(list)), key = lambda i: abs(list[i]-val))]
+import math
+lstsq = []
+lstn = []
+lst = []
+for i in range(1,100):
+    sq = i*i
+    lstsq.append(sq)
+t = int(input("enter no of test cases:"))
+for j in range(1,t+1):
+    n = int(input())
+    lstn.append(n)
+print(" ")
+for k in range(0,len(lstn)):
+    for m in range(0,len(lstsq)):
+           if lstn[k] == lstsq[m]:
+              print(int(math.sqrt(lstsq[m-1])))
+           else:
+              c = closest(lstsq,lstn[k])
+              lst.append(c)
+              break
+for kk in range(0,len(lst)):
+    for mm in range(0,len(lstsq)):
+           if lst[kk] == lstsq[mm]:
+              print(int(math.sqrt(lstsq[mm-1])))
