@@ -1,0 +1,24 @@
+#Given four different points in space. Find whether these points can form a square or not.
+
+#Input:
+#The first line of input contains an integer T denoting the number of test cases.The first line of each testcase contains x1, y1, x2, y2, x3, y3, x4, y4(four points coordinates) separated by space.
+
+#Output:
+#Print "Yes"(without quotes) if it is square else "No"(without quotes).
+# codeing in python by anshul thakur
+# taken from geek for geeks
+import math
+t= int(input())
+for j in range(1,t+1):
+    n = input().split(' ')
+    lst = [int(num) for num in n]
+    dd1 = ((lst[0]-lst[2])*(lst[0]-lst[2]))+((lst[1]-lst[3])*(lst[1]-lst[3]))
+    dd2 = ((lst[0]-lst[6])*(lst[0]-lst[6]))+((lst[1]-lst[7])*(lst[1]-lst[7]))
+    dd3 = ((lst[0]-lst[4])*(lst[0]-lst[4]))+((lst[1]-lst[5])*(lst[1]-lst[5]))
+    d1 = int(math.sqrt(dd1))
+    d2 = int(math.sqrt(dd2))
+    d3 = int(math.sqrt(dd3))
+    if ((d1 == d2 or d1 == d3 or d2 == d3) and ((int(1.414*d2) == d1,d3) or (int(1.414*d3) == d1,d2) or (int(1.414*d1) == d2,d1))) :
+        print("Yes")
+    else:
+        print("No")
