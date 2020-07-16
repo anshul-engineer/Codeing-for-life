@@ -1,0 +1,29 @@
+#Given a MxN matrix, count the number of squares in the matrix.squaresinREct
+
+#Input:
+
+#The first line of input contains an integer T denoting the no of test cases. Then T test cases follow. Each test case contains two space seperated integers M and N, denoting the size of the Matrix.
+#Output:
+
+#or each test output a single integer denoting the total number of squares.
+# taken from geek for geeks
+# sample space for  all squares
+
+lst = []
+def squares(n,m):
+    if n>m:
+         print(int(((m * (m + 1) * (2 * m + 1) /
+           6 + (n - m) * m * (m + 1) / 2)) ))
+    else:
+        a = n
+        n = m
+        m = a
+        print(int(((m * (m + 1) * (2 * m + 1) /
+           6 + (n - m) * m * (m + 1) / 2)) ))
+t = int(input("enter no of test cases:"))
+for i in range(1,t+1):
+    a = input().split(' ')
+    aa = [int(num) for num in a]
+    lst.append(aa)
+for j in lst:
+    squares(j[0],j[1])
