@@ -1,0 +1,44 @@
+#Calculate the angle between hour hand and minute hand.
+#There can be two angles between hands, we need to print minimum of two. Also, we need to print floor of final result angle. For example, if the final angle is 10.61, we need to print 10.
+
+
+
+#Input:
+
+#The first line of input contains a single integer T denoting the number of test cases. Then T test cases follow. Each test case consists of one line conatining two space separated numbers h and m where h is hour and m is minute.
+
+#Coresponding to each test case, print the angle b/w hour and min hand in a separate line.
+# codeing in python by anshul thakur
+# taken from geek for geeks
+
+
+
+
+lst =[]
+def clock(hr,min):
+    if min == 60:
+        min = 00
+        ang1 = 0.5 * (hr * 60 + min)
+        ang2 = min*6
+        ang = ang1-ang2
+        a = int(abs(ang))
+        if a >180:
+            print(360-a)
+        else:
+            print(a)
+    else:
+        ang1 = 0.5 * (hr * 60 + min)
+        ang2 = min*6
+        ang = ang1-ang2
+        a = int(abs(ang))
+        if a >180:
+            print( 360-a)
+        else:
+            print(a)
+t = int(input())
+for i in range(1,t+1):
+    n = input().split(' ')
+    no = [int(num) for num in n]
+    lst.append(no)
+for j in lst:
+    clock(j[0],j[1])
