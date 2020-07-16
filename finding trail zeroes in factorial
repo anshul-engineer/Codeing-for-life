@@ -1,0 +1,39 @@
+#For an integer n find number of trailing zeroes in n! .
+
+#Input:
+#The first line contains an integer 'T' denoting the total number of test cases. In each test cases, it contains an integer 'N'.
+
+#Output:
+#In each seperate line output the answer to the problem.
+# codeing in python by anshul thakur
+# taken from geek for geeks
+
+list = []
+def facto(n):
+    lst =[]
+    l1 = []
+    l2 = []
+    fact = 1
+    count = 0
+    for i in range(1,n+1):
+        lst.append(i)
+    for j in lst:
+       fact = fact*j
+    f = str(fact)
+    for k in f:
+        l1.append(int(k))
+    l1.reverse()
+    for v in range(0,len(l1)):
+        if l1[v] == 0:
+            count = count+1
+            continue
+        else:
+            break
+    print(count)
+
+t = int(input())
+for m in range(1,t+1):
+    val = int(input())
+    list.append(val)
+for o in range(0,len(list)):
+    facto(list[o])
