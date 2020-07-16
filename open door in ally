@@ -1,0 +1,33 @@
+#Given n doors and n persons. The doors are numbered 1 to n and persons are given id’s numbered 1 to n. Each door can have only 2 status open and closed. Initially all the doors have status closed. Find the final status of all the doors if a person changes the current status of all the doors, i.e. if status open then change to status closed and vice versa, for which he is authorized. A person with id ‘i’ is authorized to change the status of door numbered ‘j’ if ‘j’ is a multiple of ‘i’.
+
+#Note:
+#– A person has to change the current status of all the doors for which he is authorized exactly once.
+#– There can be a situation that before a person changes the status of the door, another person who is also authorized for the same door changes the status of the door.
+# codeing in python by anshul thakur
+# taken from geek for geeks
+
+list = []
+import math
+def evenfactore(n):
+    sq = math.sqrt(n)
+    if sq*sq == n:
+        return False
+
+    return True
+
+def status(m):
+  count = 0
+  for i in range(1,m+1):
+    if (evenfactore(i)==True):
+        print("closed",end = ' ')
+        #count = count+0
+    else:
+        print("open",end = ' ')
+        #count = count+1
+  #print(count)
+t = int(input())
+for j in range(1,t+1):
+    v = int(input())
+    list.append(v)
+for k in range(0,len(list)):
+    status(list[k])
