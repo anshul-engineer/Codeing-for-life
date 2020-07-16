@@ -1,0 +1,49 @@
+#Somedays ago Leeana Learned about Fibonacci Number and then her uncle gave her a task. The task is to find the last two digits of nth Fibonacci number. The Fibonacci number sequence are: 0 1 1 2 3 5 8 13 21....... (0 based indexing)
+#Note: Incase the fibonacci number is a single digit number print it with appending a 0 at its front ie for no 2 print 02.
+
+#Input:
+#The first line of input contains an integer T denoting the no of test cases. Then T test cases follow. Each test case contains an integer n.
+
+#Output:
+#For each test case print the required answer in a new line.
+# codeing in python by anshul thakur
+# taken from geek for geeks
+
+lstn = []
+def a(numy):
+ nlist =[]
+ elist =[]
+ lt =[0]
+ ls=[]
+ nterm= 1000
+ n1 = 0
+ n2 = 1
+ count = 0
+ if nterm <= 0:
+    print('enter a positive number:  ')
+ elif nterm == 1:
+    print(nterm)
+ else:
+    while count < nterm:
+        nlist.append(n1)
+        nth = n1+n2
+        n1=n2
+        n2=nth
+        count += 1
+ a = str(nlist[numy])
+ for ii in a:
+     lt.append(int(ii))
+ lt.reverse()
+ ls.append(str(lt[1]))
+ ls.append(str(lt[0]))
+ print(ls[0]+ls[1])
+
+
+
+
+t = int(input("enter no of test cases:"))
+for j in range(1,t+1):
+    n = int(input())
+    lstn.append(n)
+for k in range(0,len(lstn)):
+    a(lstn[k])
