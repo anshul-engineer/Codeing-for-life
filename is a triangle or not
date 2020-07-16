@@ -1,0 +1,30 @@
+#Check whether the number is Triangular or not. A number is termed as triangular number if we can represent it in the form of triangular grid of points such that the points form an equilateral triangle and each row contains as many points as the row number, i.e., the first row has one point, second row has two points, third row has three points and so on. The starting triangular numbers are 1, 3 (1+2), 6 (1+2+3), 10 (1+2+3+4).
+
+#Input:
+#The first line of input contains an integer T denoting the number of test cases. The first line of each test case is N, N is the number to be checked if it is traingular or not.
+
+#utput:
+#If the number is Triangular then display 1 otherwise 0.
+# taken from geek for geeks
+# sample space for  all squares
+
+lstn =[]
+def triangle(num):
+
+ list = []
+ sum = 0
+ n = 1
+ for i in range(0,num):
+    sum = sum+n
+    n = n+1
+    list.append(sum)
+ if num in list:
+     print("1")
+ else:
+     print("0")
+t = int(input("enter no of test cases:"))
+for j in range(1,t+1):
+    n = int(input())
+    lstn.append(n)
+for k in range(0,len(lstn)):
+    triangle(lstn[k])
