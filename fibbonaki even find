@@ -1,0 +1,40 @@
+#Given a positive integer N, find the Nth Even Fibonacci number. Since the answer can be very large, print the answer modulo 1000000007.
+
+#Input:
+#The first line of input contains T denoting the number of testcases.Then each of the T lines contains a single positive integer N.
+
+#Output:
+#Output the Nth Even Fibonacci number.
+# codeing in python by anshul thakur
+# taken from geek for geeks
+
+lstn = []
+def a(numy):
+ nlist =[]
+ elist =[]
+ nterm= 1000
+ n1 = 0
+ n2 = 1
+ count = 0
+ if nterm <= 0:
+    print('enter a positive number:  ')
+ elif nterm == 1:
+    print(nterm)
+ else:
+    while count < nterm:
+        nlist.append(n1)
+        nth = n1+n2
+        n1=n2
+        n2=nth
+        count += 1
+ for i in range(0,len(nlist)):
+    if nlist[i]%2 == 0:
+        elist.append(nlist[i])
+ print(elist[numy]%1000000007)
+
+t = int(input("enter no of test cases:"))
+for j in range(1,t+1):
+    n = int(input())
+    lstn.append(n)
+for k in range(0,len(lstn)):
+           a(lstn[k])
